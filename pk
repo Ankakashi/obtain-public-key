@@ -8,7 +8,7 @@
 if [[ "$1" == "--help" || "$1" == "-h" ]]; then
 	echo "usage: pk [name1] [name2] [name3] ..."
 	echo "Curls one or more public key(s) from Github if one or more Githubname(s) are provided."
-	echo "If no name specified own public key is curled." 
+	echo "If no name is specified user's own public key is curled." 
 	exit
 fi
 
