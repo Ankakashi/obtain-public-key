@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# pk a b c
+# $@=a b c
+# #$1=a
+# $#=3
+
+if [[ "$1" == "--help" || "$1" == "-h" ]]; then
+	echo "I will curl one or more public key(s) from Github, if you give me one or more Githubname(s)."
+	exit
+fi
+
+if [ "$#" == "0" ]; then
+	LIST=$USERNAME
+else
+	LIST=$@
+fi 
+
+for NAME in $LIST
+do
+	curl -f https://github.com/$NAME.keys 
+	if [ "$?" == "22" ]; then
+		# We output messages to the user to stderr instead of stdout
+		# Since echo would output to stderr by default, we use
+		# 1>&2 to redirect the 1st output channel (stdout)
+		# to the 2nd output channel (stderr).
+		echo "Could not find public_key from $NAME" 1>&2
+		exit 1
+	else
+		echo "public_key_$NAME"
+	fi
+done
