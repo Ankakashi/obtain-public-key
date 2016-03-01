@@ -1,9 +1,11 @@
 #!/bin/bash
 
+###########
 # pk a b c
 # $@=a b c
 # #$1=a
 # $#=3
+###########
 
 if [[ "$1" == "--help" || "$1" == "-h" ]]; then
 	echo "usage: pk [name1] [name2] [name3] ..."
