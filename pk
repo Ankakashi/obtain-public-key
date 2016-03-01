@@ -6,6 +6,7 @@
 # $#=3
 
 if [[ "$1" == "--help" || "$1" == "-h" ]]; then
+	echo "usage: pk name1 name2 name3 ..."
 	echo "I will curl one or more public key(s) from Github, if you give me one or more Githubname(s)."
 	exit
 fi
