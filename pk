@@ -11,9 +11,9 @@ if [[ "$1" == "--help" || "$1" == "-h" ]]; then
 	echo "usage: pk [name1] [name2] [name3] ..."
 	echo "Curls one or more public key(s) from Github if one or more Githubname(s) are provided."
 	echo "If no name is provided user's own public key is curled."
-	echo "add USERNAME=[yourGithubName] to .bashrc to use pk without argument"
+	echo "add USERNAME=[yourGithubName] to .bashrc to use pk without argument and enjoy"
 	echo "It's a beautiful day!"
-exit
+	exit
 fi
 
 if [ "$#" == "0" ]; then
